@@ -10,6 +10,8 @@ from linebot.models import (
     MessageEvent, TextMessage, TextSendMessage,
 )
 
+import csv
+
 app = Flask(__name__)
 
 #環境変数取得
