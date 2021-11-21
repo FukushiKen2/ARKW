@@ -1,15 +1,21 @@
-from flask import Flask
-from flask import render_template
-from flask import request
+from flask import Flask, request, abort
+import os
+
+from linebot import (
+    LineBotApi, WebhookHandler
+)
+from linebot.exceptions import (
+    InvalidSignatureError
+)
+from linebot.models import (
+    MessageEvent, TextMessage, TextSendMessage,
+)
+
 
 
 app = Flask(__name__)
 
-@app.route('/')
-def hello():
-        return "Hello, World!"
-
-@app.route("/index")
+@app.route("/")
 def index():
     name = request.args.get("name")
     return render_template("index.html",name=name)
