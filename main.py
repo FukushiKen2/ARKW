@@ -24,7 +24,10 @@ handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 def hello_world():
     return "hello world!"
 
-@app.route("/callback", methods=['POST'])
+@app.route("/callback", methods=["GETS","POST"])
+
+def hatano():
+    return "hatano world!"
 	
 def callback():
     # get X-Line-Signature header value
