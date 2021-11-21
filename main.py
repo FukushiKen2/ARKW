@@ -25,6 +25,10 @@ def hello_world():
     return "hello world!"
 
 @app.route("/callback", methods=['POST'])
+def masayuki():
+    return "hatano"
+	
+	
 def callback():
     # get X-Line-Signature header value
     signature = request.headers['X-Line-Signature']
