@@ -1,1 +1,2 @@
 print("hatano")
+print("arakawa")
