@@ -21,8 +21,10 @@ handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 
 @app.route("/")
 def hello_world():
-
-    return "ようこそC34業務連絡へ！！\n"
+    f = open("konishi.csv",'a')
+    tanzawa = f.read()
+    f.close()
+    return tanzawa
 
 
 
