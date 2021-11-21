@@ -33,6 +33,10 @@ def callback():
 
     try:
         handler.handle(body, signature)
+        
+if __name__ == "__main__":
+    app.run(debug=True)
+
 
     except InvalidSignatureError:
         abort(400)
