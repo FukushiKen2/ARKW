@@ -50,8 +50,9 @@ def callback():
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
     f = open("konishi.csv",'a')
-    add_sentence = event.message.text + "\n"
+    add_sentence = event.message.text 
     f.write(add_sentence)
+    f.write("\n")
     f.close()
 
     line_bot_api.reply_message(
