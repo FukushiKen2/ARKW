@@ -21,7 +21,11 @@ handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 
 @app.route("/")
 def hello_world():
+    f = open("konishi.csv",'a')
+    f.write("羽多野真友喜\n")
     return "hello world!"
+
+
 
 @app.route("/callback", methods=['POST'])
 	
