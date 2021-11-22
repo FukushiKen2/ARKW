@@ -25,12 +25,14 @@ YOUR_CHANNEL_SECRET = "ee66fe29987b4811e91c4a88e4d5b0fd"
 line_bot_api = LineBotApi(YOUR_CHANNEL_ACCESS_TOKEN)
 handler = WebhookHandler(YOUR_CHANNEL_SECRET)
 
+C34 = []
+
 @app.route("/")
 def hello_world():
     f = open("konishi.csv",'r')
     tanzawa = f.read()
     f.close()
-    return tanzawa
+    return C34
 
 
 
@@ -64,6 +66,7 @@ def handle_message(event):
     add_hat = d_today.strftime('%Y-%m-%d %H:%M:%S')
 
     f.write(add_tan + " " + add_sentence + " " + add_hat)
+    C34.append(add_tan + " " + add_sentence + " " + add_hat)
     f.write("\n")
     f.close()
 
