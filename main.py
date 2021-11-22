@@ -32,7 +32,7 @@ def hello_world():
     f = open("konishi.csv",'r')
     tanzawa = f.read()
     f.close()
-    return C34
+    return tanzawa
 
 
 
