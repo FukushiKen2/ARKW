@@ -11,8 +11,7 @@ from linebot.models import (
 )
 
 import csv
-import datetime
-from datetime import date
+
 
 app = Flask(__name__)
 
