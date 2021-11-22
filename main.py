@@ -58,7 +58,7 @@ def handle_message(event):
     add_tan = profile.display_name
     add_sentence = event.message.text 
     add_hat = " "
-    f.write(add_tan + " " + add_sentence " " + add_hat)
+    f.write(add_tan + " " + add_sentence + " " + add_hat)
     f.write("\n")
     f.close()
 
