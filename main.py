@@ -51,9 +51,12 @@ def callback():
 
 @handler.add(MessageEvent, message=TextMessage)
 def handle_message(event):
+    profile = line_bot_api.get_profile(event.source.user_id)
+    
     f = open("konishi.csv",'a')
+    add_tan = profile.display_name
     add_sentence = event.message.text 
-    f.write(add_sentence)
+    f.write(add_tan + " " + add_sentence)
     f.write("\n")
     f.close()
 
