@@ -11,6 +11,7 @@ from linebot.models import (
 )
 
 import csv
+import datetime
 
 app = Flask(__name__)
 
@@ -56,7 +57,7 @@ def handle_message(event):
     f = open("konishi.csv",'a')
     add_tan = profile.display_name
     add_sentence = event.message.text 
-    f.write(add_tan + " " + add_sentence)
+    f.write(add_tan + " " + add_sentence + " " + datetime.now())
     f.write("\n")
     f.close()
 
