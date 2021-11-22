@@ -58,7 +58,8 @@ def handle_message(event):
     f = open("konishi.csv",'a')
     add_tan = profile.display_name
     add_sentence = event.message.text 
-　　add_hat = dt_now.strftime('%Y-%m-%d %H:%M:%S')
+    d_today = datetime.date.today()
+    add_hat = d_today.strftime('%Y-%m-%d %H:%M:%S')
     f.write(add_tan + " " + add_sentence " " + add_hat)
     f.write("\n")
     f.close()
