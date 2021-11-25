@@ -44,8 +44,8 @@ def hello_world():
     conn.close()
 
     answer = "野獣先輩"
-    #for row in rows:
-	#print(row["id"])
+    for row in rows:
+	print(row["id"])
 		
     return answer
 
