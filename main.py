@@ -43,11 +43,10 @@ def hello_world():
     cur.close()
     conn.close()
 
-    answer = "野獣先輩"
-    for row in rows:
-	print(row["id"])
+    #for row in rows:
+	#print(row["id"])
 		
-    return answer
+    return render_templete('index.html')
 
 
 
