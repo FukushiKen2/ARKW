@@ -43,7 +43,8 @@ def hello_world():
     cur.close()
     conn.close()
 
-    return "ぶっちっぱ"
+    for row in rows:
+		return row
 
 
 
