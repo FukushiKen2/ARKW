@@ -43,9 +43,9 @@ def hello_world():
     cur.close()
     conn.close()
 
-    answer = ""
-    for row in rows:
-		answer = answer + row + "\n"
+    answer = "野獣先輩"
+ #   for row in rows:
+#		answer = answer + row + "\n"
 		
 
     return answer
