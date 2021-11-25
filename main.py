@@ -77,7 +77,7 @@ def handle_message(event):
         TextSendMessage(text=event.message.text))
 
     
-    conn = psycopg2.connect(postgres://nadqddfmbwcnoy:580a674ac5c8a0bd50cbca87847170ee782770068e861101bac898f351bb997e@ec2-35-169-204-98.compute-1.amazonaws.com:5432/d6379htn7887en, sslmode='require'
+    conn = psycopg2.connect("postgres://nadqddfmbwcnoy:580a674ac5c8a0bd50cbca87847170ee782770068e861101bac898f351bb997e@ec2-35-169-204-98.compute-1.amazonaws.com:5432/d6379htn7887en", sslmode='require'
     )
 
     cur = conn.cursor()
