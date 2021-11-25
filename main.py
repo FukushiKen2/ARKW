@@ -82,9 +82,10 @@ def handle_message(event):
 
     cur = conn.cursor()
 
-    cur.execute("insert into hatano VALUES (%s)",add_chujo)
+    cur.execute("insert into konishi VALUES ('%s')" % (add_chujo))
     conn.commit()
     cur.close()
+
     conn.close()
   
 
