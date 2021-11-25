@@ -45,7 +45,7 @@ def hello_world():
 
     answer = "野獣先輩"
     #for row in rows:
-	#print(row)
+	#print(row["id"])
 		
     return answer
 
