@@ -1,12 +1,13 @@
-<!DOCTYPE HTML>
-<html lang="ja">
-<head>
-<meta charset="UTF-8">
-<title>C34業務連絡</title>
-</head>
-<body>
-<h1>フォームに情報を入力してapp.py側に送信する</h1>
+{% extended "layout.html" %}
+{% block content %}
+  <h1>C34業務連絡</h1>
 
+  {% for row in rows %}
+    <p>{{ row }}</p>
+  {% endfor %}
+
+{% endblock %}
   
-</body>
-</html>
+ 
+
+
