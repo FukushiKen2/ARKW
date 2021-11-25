@@ -1,13 +1,17 @@
-{% extended "layout.html" %}
-{% block content %}
-  <h1>C34業務連絡</h1>
-
-  {% for row in rows %}
-    <p>{{ row }}</p>
-  {% endfor %}
-
-{% endblock %}
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<title>C34</title> 
+</head>
   
- 
-
+<body>
+{% block content %}
+<h1>C34業務連絡</h1>
+    {% for row in rows %}
+        <p>{{ row }}</p>
+    {% endfor %}
+{% endblock %}
+    </body>
+</html>
 
