@@ -76,12 +76,16 @@ def handle_message(event):
         event.reply_token,
         TextSendMessage(text=event.message.text))
 
-    DATABASE_URL = 'postgres://nadqddfmbwcnoy:580a674ac5c8a0bd50cbca87847170ee782770068e861101bac898f351bb997e@ec2-35-169-204-98.compute-1.amazonaws.com:5432/d6379htn7887en'
     
-    conn = psycopg2.connect(DATABASE_URL, sslmode='require'
+    conn = psycopg2.connect(postgres://nadqddfmbwcnoy:580a674ac5c8a0bd50cbca87847170ee782770068e861101bac898f351bb997e@ec2-35-169-204-98.compute-1.amazonaws.com:5432/d6379htn7887en, sslmode='require'
     )
 
+    cur = conn.cursor()
 
+    cur.execute("insert into hatano VALUES (%s)",add_chujo)
+    conn.commit()
+    cur.close()
+    conn.close()
   
 
 if __name__ == "__main__":
