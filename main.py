@@ -1,4 +1,5 @@
 from flask import Flask, request, abort
+import psycopg2
 
 from linebot import (
     LineBotApi, WebhookHandler
@@ -69,6 +70,15 @@ def handle_message(event):
     C34.append(add_tan + " " + add_sentence + " " + add_hat)
     f.write("\n")
     f.close()
+
+    DATABASE_URL = 'postgres://nadqddfmbwcnoy:580a674ac5c8a0bd50cbca87847170ee782770068e861101bac898f351bb997e@ec2-35-169-204-98.compute-1.amazonaws.com:5432/d6379htn7887en'
+    
+    conn = psycopg2.connect(DATABASE_URL, sslmode='require'
+    )
+
+    cur = conn.cursor()
+
+
 
     line_bot_api.reply_message(
         event.reply_token,
