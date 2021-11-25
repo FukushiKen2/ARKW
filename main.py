@@ -46,7 +46,7 @@ def hello_world():
     #for row in rows:
 	#print(row["id"])
 		
-    return render_templete('index.html', rows = rows)
+    return render_template('index.html', rows = rows)
 
 
 
