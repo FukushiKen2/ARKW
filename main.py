@@ -44,7 +44,10 @@ def hello_world():
     conn.close()
 
     for row in rows:
-		return row
+		answer += row + "\n"
+		
+
+    return answer
 
 
 
