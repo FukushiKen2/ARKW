@@ -30,10 +30,20 @@ C34 = []
 
 @app.route("/")
 def hello_world():
-    f = open("konishi.csv",'r')
-    tanzawa = f.read()
-    f.close()
-    return tanzawa
+#    f = open("konishi.csv",'r')
+#    tanzawa = f.read()
+#    f.close()
+
+    conn = psycopg2.connect("postgres://nadqddfmbwcnoy:580a674ac5c8a0bd50cbca87847170ee782770068e861101bac898f351bb997e@ec2-35-169-204-98.compute-1.amazonaws.com:5432/d6379htn7887en", sslmode='require'
+    )
+
+    cur = conn.cursor()
+    cur.execute("select * from konishi")
+    rows = cur.fetchall()
+    cur.close()
+    conn.close()
+
+    return rows
 
 
 
@@ -67,10 +77,10 @@ def handle_message(event):
     add_hat = d_today.strftime('%Y-%m-%d %H:%M:%S')
     add_chujo = add_tan + " " + add_sentence + " " + add_hat
 
-    f.write(add_tan + " " + add_sentence + " " + add_hat)
-    C34.append(add_tan + " " + add_sentence + " " + add_hat)
-    f.write("\n")
-    f.close()
+#    f.write(add_tan + " " + add_sentence + " " + add_hat)
+#    C34.append(add_tan + " " + add_sentence + " " + add_hat)
+#    f.write("\n")
+#    f.close()
 
     line_bot_api.reply_message(
         event.reply_token,
