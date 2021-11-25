@@ -1,4 +1,4 @@
-from flask import Flask, request, abort, render_templete
+from flask import Flask, request, abort, render_template
 import psycopg2
 
 from linebot import (
