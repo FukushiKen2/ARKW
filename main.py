@@ -65,6 +65,7 @@ def handle_message(event):
     add_sentence = event.message.text 
     d_today = datetime.datetime.today() + datetime.timedelta(hours=9)
     add_hat = d_today.strftime('%Y-%m-%d %H:%M:%S')
+    add_chujo = add_tan + " " + add_sentence + " " + add_hat
 
     f.write(add_tan + " " + add_sentence + " " + add_hat)
     C34.append(add_tan + " " + add_sentence + " " + add_hat)
@@ -78,13 +79,17 @@ def handle_message(event):
 
     cur = conn.cursor()
 
+    cur.execute("insert into hatano VALUES (add_chujo)")
+    conn.commit()
+    cur.close()
+    conn.close()
+
 
 
     line_bot_api.reply_message(
         event.reply_token,
         TextSendMessage(text=event.message.text))
-
-    
+  
 
 if __name__ == "__main__":
 #    app.run()
